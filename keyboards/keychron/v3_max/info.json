@@ -50,7 +50,15 @@
             "solid_reactive_simple": true,
             "solid_splash": true,
             "splash": true,
-            "typing_heatmap": true
+            "typing_heatmap": true,
+            "custom_reactive_escape_key": true
+        },
+        "default": {
+            "hue": 0,
+            "sat": 251,
+            "val": 255,
+            "speed": 100,
+            "animation": "custom_reactive_escape_key"
         }
     },
     "eeprom": {
