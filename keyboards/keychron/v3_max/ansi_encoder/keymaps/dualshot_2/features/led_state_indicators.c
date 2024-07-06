@@ -80,8 +80,8 @@
                current_led_state.num_lock    != previous_led_state.num_lock
             || current_led_state.caps_lock   != previous_led_state.caps_lock
             || current_led_state.scroll_lock != previous_led_state.scroll_lock
+            || current_led_state.compose     != previous_led_state.compose
             || current_led_state.kana        != previous_led_state.kana
-            || current_led_state.caps_lock   != previous_led_state.caps_lock
         ) {
             led_state_debounce_timer = timer_read_fast() + LED_STATE_DEBOUNCE_INTERVAL_MS;
             // Guard against the rare case that we wrap around to exactly 0, because we use 0 to
