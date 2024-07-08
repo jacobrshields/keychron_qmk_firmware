@@ -5,6 +5,7 @@
 
 #include "config.h"
 #include "custom_keycodes.h"
+#include "features/led_state_indicators.h"
 #include "features/toggleable_battery_indicator.h"
 
 enum layers {
@@ -63,6 +64,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_keychron_common(keycode, record)) {
         return false; // Stop processing
     }
+    #if defined(LED_STATE_RESIST_UNEXPECTED_CHANGES) && (defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE))
+        if (!process_record_led_state_indicators(keycode, record)) {
+            return false; // Stop processing
+        }
+    #endif
     #if defined(ENABLE_TOGGLEABLE_BATTERY_INDICATOR) && defined(RGB_MATRIX_ENABLE)
         if (!process_record_toggleable_battery_indicator(keycode, record)) {
             return false; // Stop processing

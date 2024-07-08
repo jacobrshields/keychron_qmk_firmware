@@ -8,7 +8,7 @@
 
 /* LED State Indicators */
 #define LED_STATE_COLOR_FROM_BATTERY
-#define LED_STATE_DEBOUNCE_INTERVAL_MS 20
+#define LED_STATE_RESIST_UNEXPECTED_CHANGES
 
 /* Toggleable Battery Indicator */
 // #define ENABLE_TOGGLEABLE_BATTERY_INDICATOR
