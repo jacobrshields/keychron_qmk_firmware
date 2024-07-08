@@ -7,6 +7,8 @@
  */
 #if defined(ENABLE_TOGGLEABLE_BATTERY_INDICATOR) && defined(RGB_MATRIX_ENABLE)
 
+#include "quantum.h"
+
 bool process_record_toggleable_battery_indicator(uint16_t keycode, keyrecord_t *record);
 
 bool rgb_matrix_indicators_toggleable_battery_indicator(void);
