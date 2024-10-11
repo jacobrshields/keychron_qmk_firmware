@@ -71,5 +71,5 @@
     "build": {
         "debounce_type": "sym_eager_pk"
     },
-    "debounce": 5
+    "debounce": 12
 }
