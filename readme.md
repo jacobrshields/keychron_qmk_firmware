@@ -1,3 +1,25 @@
+# Fork Quick Start
+
+1. Follow the instructions from [Setting Up Your QMK Environment](https://docs.qmk.fm/newbs_getting_started), but
+   instead of running `qmk setup` run:
+   ```bash
+   qmk setup -H D:\desired_home_dir\qmk_firmware -b wireless_playground_jrs jacobrshields/keychron_qmk_firmware
+   ```
+
+2. To compile the Keychron V3 Max Dualshot 2 keymap, run:
+   ```bash
+   qmk compile -kb keychron/v3_max/ansi_encoder -km dualshot_2
+   ```
+
+3. To flash the keyboard, use [QMK Toolbox](https://qmk.fm/toolbox) with the compiled
+   `keychron_v3_max_ansi_encoder_dualshot_2.bin`. You can leave the MCU option alone.
+
+4. To use VIA, install it (see [releases](https://github.com/the-via/releases/releases)); go to the Settings tab; set
+   Render Mode to 3D (otherwise VIA can't detect the keyboard
+   [for some reason](https://github.com/the-via/app/issues/202)); enable Show Design tab; go to the Design tab; and
+   load the definition from
+   `qmk_firmware\keyboards\keychron\v3_max\ansi_encoder\keymaps\dualshot_2\v3_max_ansi_encoder_dualshot_2_via.json`.
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
