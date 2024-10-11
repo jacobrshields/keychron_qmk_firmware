@@ -12,7 +12,9 @@
    ```
 
 3. To flash the keyboard, use [QMK Toolbox](https://qmk.fm/toolbox) with the compiled
-   `keychron_v3_max_ansi_encoder_dualshot_2.bin`. You can leave the MCU option alone.
+   `keychron_v3_max_ansi_encoder_dualshot_2.bin`. You can leave the MCU option alone. To put the keyboard into Device
+   Firmware Upgrade (DFU) mode, set its connectivity toggle to wired mode, unplug the cable (if inserted), and then
+   press and hold the Escape key while inserting the cable.
 
 4. To use VIA, install it (see [releases](https://github.com/the-via/releases/releases)); go to the Settings tab; set
    Render Mode to 3D (otherwise VIA can't detect the keyboard
