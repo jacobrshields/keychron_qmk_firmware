@@ -13,3 +13,6 @@
 /* Toggleable Battery Indicator */
 // #define ENABLE_TOGGLEABLE_BATTERY_INDICATOR
 #define BATTERY_INDICATOR_INDEX 14
+
+/* Windows Key Lock */
+#define WINDOWS_KEY_LOCK

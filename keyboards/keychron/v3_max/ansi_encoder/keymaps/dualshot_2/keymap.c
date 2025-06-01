@@ -7,6 +7,7 @@
 #include "custom_keycodes.h"
 #include "features/led_state_indicators.h"
 #include "features/toggleable_battery_indicator.h"
+#include "features/windows_key_lock.h"
 
 enum layers {
     MAC_BASE,
@@ -47,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,    _______,  _______,  _______,
         _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,              _______,
         _______,            _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,              _______,
-        _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,    _______,  _______,  _______),
+        _______,  WIN_LOCK, _______,                                _______,                                _______,  WIN_LOCK, _______,    _______,    _______,  _______,  _______),
 };
 
 #if defined(ENCODER_MAP_ENABLE)
@@ -71,6 +72,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #endif
     #if defined(ENABLE_TOGGLEABLE_BATTERY_INDICATOR) && defined(RGB_MATRIX_ENABLE)
         if (!process_record_toggleable_battery_indicator(keycode, record)) {
+            return false; // Stop processing
+        }
+    #endif
+    #if defined(WINDOWS_KEY_LOCK)
+        if (!process_record_windows_key_lock(keycode, record)) {
             return false; // Stop processing
         }
     #endif

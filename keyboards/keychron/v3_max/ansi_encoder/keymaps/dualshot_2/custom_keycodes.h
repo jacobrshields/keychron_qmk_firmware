@@ -9,5 +9,8 @@ enum custom_keycodes {
     #if defined(ENABLE_TOGGLEABLE_BATTERY_INDICATOR) && defined(RGB_MATRIX_ENABLE)
         BAT_TOG,
     #endif
+    #if defined(WINDOWS_KEY_LOCK)
+        WIN_LOCK,
+    #endif
     NEW_NEW_SAFE_RANGE,
 };
