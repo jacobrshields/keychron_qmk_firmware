@@ -89,5 +89,10 @@ bool rgb_matrix_indicators_user(void) {
             return false; // Stop processing
         }
     #endif
+    #if defined(WINDOWS_KEY_LOCK) && defined(RGB_MATRIX_ENABLE)
+        if (!rgb_matrix_indicators_windows_key_lock()) {
+            return false; // Stop processing
+        }
+    #endif
     return true; // Continue processing
 }

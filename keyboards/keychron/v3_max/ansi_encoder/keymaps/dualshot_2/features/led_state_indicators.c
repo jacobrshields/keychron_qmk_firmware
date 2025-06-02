@@ -10,6 +10,7 @@
 #include "usb_main.h"
 
 #include "led_state_indicators.h"
+#include "utils/timers.h"
 
 // #define ENABLE_DEBUG_LEDS
 
@@ -104,14 +105,6 @@ static inline void load_raw_led_state(void) {
      * rgb_task_flush() in quantum/rgb_matrix/rgb_matrix.c), so it might not have any noticeable
      * impact.
      */
-
-    #define TIMER_STOPPED 0
-    /*
-     * Guard against the rare case that we wrap around to exactly 0, because we use 0 to indicate
-     * that the timer isn't running.
-     */
-    #define START_FAST_TIMER_FROM(now, expires_in) MAX(1, now + expires_in)
-    #define START_FAST_TIMER(expires_in) START_FAST_TIMER_FROM(timer_read_fast(), expires_in)
 
     static fast_timer_t key_event_timers[]         = { [NUM_LOCK ... SCROLL_LOCK] = TIMER_STOPPED };
     static fast_timer_t unexpected_change_timers[] = { [NUM_LOCK ... SCROLL_LOCK] = TIMER_STOPPED };

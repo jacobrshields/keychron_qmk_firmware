@@ -16,3 +16,5 @@
 
 /* Windows Key Lock */
 #define WINDOWS_KEY_LOCK
+#define LEFT_WINKEY_INDEX 77
+#define RIGHT_WINKEY_INDEX 81
